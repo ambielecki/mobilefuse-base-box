@@ -56,6 +56,14 @@ RUN	yum -y update \
 	&& yum clean all
 
 # -----------------------------------------------------------------------------
+# Install composer
+# -----------------------------------------------------------------------------
+
+RUN curl https://getcomposer.org/installer > composer-setup.php
+RUN php composer-setup.php --install-dir /usr/bin --filename=composer
+RUN rm -f composer-setup.php
+
+# -----------------------------------------------------------------------------
 # UTC Timezone & Networking
 # -----------------------------------------------------------------------------
 RUN ln -sf /usr/share/zoneinfo/UTC /etc/localtime \
