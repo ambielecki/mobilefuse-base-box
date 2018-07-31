@@ -32,7 +32,6 @@ RUN	yum -y update \
 	mod_ssl \
 	mysql-server \
 	nano \
-	nodejs \
 	pbzip2 \
 	php71w \
 	php71w-cli \
@@ -62,6 +61,13 @@ RUN	yum -y update \
 RUN curl https://getcomposer.org/installer > composer-setup.php
 RUN php composer-setup.php --install-dir /usr/bin --filename=composer
 RUN rm -f composer-setup.php
+
+# -----------------------------------------------------------------------------
+# Install updated nodejs
+# -----------------------------------------------------------------------------
+
+RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash -
+RUN yum -y install nodejs
 
 # -----------------------------------------------------------------------------
 # UTC Timezone & Networking
