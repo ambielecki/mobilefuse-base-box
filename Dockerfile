@@ -49,8 +49,6 @@ RUN	yum -y update \
 	php71w-xml \
 	php71w-zip \
 	unzip \
-	libXrender fontconfig libXext urw-fonts \
-	ImageMagick ImageMagick-devel \
 	&& rm -rf /var/cache/yum/* \
 	&& yum clean all
 
