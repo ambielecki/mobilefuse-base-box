@@ -11,7 +11,6 @@ MAINTAINER andrewb <andrewb@mobilefuse.com>
 ARG uid=1000
 ARG gid=1000
 
-
 RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
 	&& rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
@@ -116,13 +115,6 @@ RUN sed -i \
 RUN sed -i \
 	-e 's~^\(LoadModule .*\)$~#\1~g' \
 	/etc/httpd/conf.modules.d/00-proxy.conf
-
-# -----------------------------------------------------------------------------
-# Disable the default SSL Virtual Host
-# -----------------------------------------------------------------------------
-RUN sed -i \
-	-e '/<VirtualHost _default_:443>/,/#<\/VirtualHost>/ s~^~#~' \
-	/etc/httpd/conf.d/ssl.conf
 
 # -----------------------------------------------------------------------------
 # Limit process for the application user
