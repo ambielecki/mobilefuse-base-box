@@ -37,7 +37,7 @@ RUN	yum -y update \
 	php71w-json \
 	php71w-mcrypt \
 	php71w-mbstring \
-	php71w-mysql \
+	php71w-mysqlnd \
 	php71w-pdo \
 	php71w-pear \
 	php71w-pecl-apcu \
