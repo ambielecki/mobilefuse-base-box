@@ -1,7 +1,7 @@
 # =============================================================================
 # ambielecki/mobilefuse-base-box
 #
-# CentOS-7, Apache 2.4, PHP 7.1, MYSQL
+# CentOS-7, Apache 2.4, PHP 7.2, MYSQL
 #
 # =============================================================================
 FROM centos:centos7
@@ -26,25 +26,27 @@ RUN	yum -y update \
 	htop \
 	httpd \
 	libreoffice \
+	mlocate \
 	mod_ssl \
 	mysql-server \
 	nano \
 	pbzip2 \
-	php71w \
-	php71w-cli \
-	php71w-devel \
-	php71w-gd \
-	php71w-json \
-	php71w-mcrypt \
-	php71w-mbstring \
-	php71w-mysqlnd \
-	php71w-pdo \
-	php71w-pear \
-	php71w-pecl-apcu \
-	php71w-mbstring \
-	php71w-soap \
-	php71w-xml \
-	php71w-zip \
+	php72w \
+	php72w-cli \
+	php72w-devel \
+	php72w-gd \
+	php72w-json \
+	php72w-mcrypt \
+	php72w-mbstring \
+	php72w-mysqlnd \
+	php72w-pdo \
+	php72w-pear \
+	php72w-pecl-apcu \
+	php72w-mbstring \
+	php72w-soap \
+	php72w-xml \
+	php72w-zip \
+	pigz \
 	unzip \
 	&& rm -rf /var/cache/yum/* \
 	&& yum clean all
